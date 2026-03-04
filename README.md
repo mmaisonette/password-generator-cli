@@ -46,9 +46,12 @@ You’ll be prompted to:
 
 ```text
 How many characteres do you want in your new password? 20
+
 Avoid ambiguous characters (O/0, l/1)? [y/N]: y
 hy6J)whzASFNLb@!CL52
+
 Copy password to clipboard? [y/N]: y
+
 Password copied to clipboard.
 ```
 
