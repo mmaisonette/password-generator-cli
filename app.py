@@ -50,7 +50,7 @@ def password_generator():
 
     try:
         avoid_ambiguous = (
-            input("Avoid ambiguous characters (O/0, l/1)? [y/N]: ").strip().lower()
+            input("\nAvoid ambiguous characters (O/0, l/1)? [y/N]: ").strip().lower()
             == "y"
         )
     except ValueError:
@@ -67,10 +67,10 @@ if __name__ == "__main__":
     if password_generated is not None:
         print(password_generated)
 
-        copy_choice = input("Copy password to clipboard? [y/N]: ").strip().lower()
+        copy_choice = input("\nCopy password to clipboard? [y/N]: ").strip().lower()
         if copy_choice == "y":
             try:
                 pyperclip.copy(password_generated)
-                print("Password copied to clipboard.")
+                print("\nPassword copied to clipboard!")
             except pyperclip.PyperclipException:
                 print("Could not access clipboard on this system.")
