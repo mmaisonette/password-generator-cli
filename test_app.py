@@ -1,3 +1,15 @@
+"""
+Unit tests for the password generator CLI application.
+
+This module contains test cases for validating the functionality of the
+password generator, including input validation, password generation with
+specified lengths, handling of ambiguous characters, and alphabet building.
+
+Test Classes:
+    - TestPasswordGenerator: Tests for the main password_generator function
+    - TestBuildAlphabet: Tests for the build_alphabet utility function
+"""
+
 import io
 import unittest
 from unittest.mock import patch
