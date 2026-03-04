@@ -27,16 +27,20 @@ import string
 import secrets
 import pyperclip
 
+
 def build_alphabet(avoid_ambiguous=False):
     alphabet = string.ascii_letters + string.digits + string.punctuation
     if avoid_ambiguous:
         ambiguous = set("O0oIl1|")
-        alphabet = ''.join(ch for ch in alphabet if ch not in ambiguous)
+        alphabet = "".join(ch for ch in alphabet if ch not in ambiguous)
     return alphabet
+
 
 def password_generator():
     try:
-        length = int(input("\nHow many characteres do you want in your new password? ").strip())
+        length = int(
+            input("\nHow many characteres do you want in your new password? ").strip()
+        )
     except ValueError:
         return "\nYou must submit the number of characters you want using numbers!"
 
@@ -45,13 +49,17 @@ def password_generator():
         return None
 
     try:
-        avoid_ambiguous = input("Avoid ambiguous characters (O/0, l/1)? [y/N]: ").strip().lower() == "y"
+        avoid_ambiguous = (
+            input("Avoid ambiguous characters (O/0, l/1)? [y/N]: ").strip().lower()
+            == "y"
+        )
     except ValueError:
         return "\nYou must submit y(yes) or N(no)!"
 
     alphabet = build_alphabet(avoid_ambiguous)
-    password = ''.join(secrets.choice(alphabet) for _ in range(length))
+    password = "".join(secrets.choice(alphabet) for _ in range(length))
     return password
+
 
 if __name__ == "__main__":
     password_generated = password_generator()
