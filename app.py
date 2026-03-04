@@ -1,3 +1,28 @@
+"""
+Password Generator Module
+
+A command-line utility for generating secure random passwords with customizable
+length and character set options.
+
+This module provides functionality to:
+- Generate random passwords of specified length (20-40 characters)
+- Optionally exclude ambiguous characters (O/0, l/1, etc.)
+- Copy generated passwords to the system clipboard
+
+Functions:
+    build_alphabet: Constructs the character set for password generation
+    password_generator: Main function that handles user input and password generation
+
+Dependencies:
+    - string: For character set definitions
+    - secrets: For cryptographically secure random selection
+    - pyperclip: For clipboard operations
+
+Usage:
+    Run the module directly to start the interactive password generator:
+    $ python app.py
+"""
+
 import string
 import secrets
 import pyperclip
