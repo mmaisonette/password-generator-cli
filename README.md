@@ -6,15 +6,15 @@ A simple command-line password generator that creates secure random passwords us
 
 ## Features
 
-- Generates cryptographically secure passwords
-- Enforces password length between **20 and 40** characters
-- Optional exclusion of ambiguous characters (`O`, `0`, `o`, `I`, `l`, `1`, `|`)
-- Optional copy-to-clipboard support via `pyperclip`
+- Generates cryptographically secure passwords.
+- Enforces password length between **20 and 40** characters.
+- Optional exclusion of ambiguous characters (`O`, `0`, `o`, `I`, `l`, `1`, `|`).
+- Optional copy-to-clipboard support via `pyperclip`.
 
 ## Requirements
 
-- Python 3.10+ (3.14 works)
-- Dependencies from `requirements.txt`
+- Python 3.10+ (3.14 works).
+- Dependencies from `requirements.txt`.
 
 ## Setup
 
@@ -38,9 +38,9 @@ python3 app.py
 
 You’ll be prompted to:
 
-1. Enter password length (must be between 20 and 40)
-2. Choose whether to avoid ambiguous characters
-3. Optionally copy the generated password to your clipboard
+1. Enter password length (must be between 20 and 40).
+2. Choose whether to avoid ambiguous characters.
+3. Optionally copy the generated password to your clipboard.
 
 ### Example session
 
@@ -57,9 +57,28 @@ Password copied to clipboard.
 ```text
 .
 ├── app.py
+├── test_app.py
 ├── requirements.txt
 └── README.md
 ```
+
+## Running Tests
+
+This project uses Python's built-in `unittest` framework.
+
+Run all tests:
+
+```bash
+python3 -m unittest -v
+```
+
+Current tests validate:
+
+- Error when password length input is not numeric.
+- Error message + `None` return when length is outside `20-40`.
+- Successful password generation with valid length.
+- Exclusion of ambiguous characters when requested.
+- Alphabet filtering behavior in `build_alphabet(...)`.
 
 ## Notes
 
